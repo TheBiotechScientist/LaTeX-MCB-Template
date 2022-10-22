@@ -43,15 +43,15 @@
 
 \ifx\@unidad\undefined
   \def\@unidad{\vspace{2cm}}
-\else
-  \newcommand\unidad[1]{\def\@unidad{#1}
-  \ifx\@unidad\empty
-  \renewcommand\@unidad{\large{\textbf{Unidad Profesional Interdisciplinaria de Biotecnología}}\\[0.5cm]}
-  \else
-  \renewcommand\@unidad{#1}
-  \fi
-  }
 \fi
+\newcommand\unidad[1]{\def\@unidad{#1}
+\ifx\@unidad\empty
+  \renewcommand\@unidad{\large{\textbf{Unidad Profesional Interdisciplinaria de Biotecnología}}\\[0.5cm]}
+\else
+  \def\@unidad{#1}
+\fi
+}
+
 
 \ifx\parskip\undefined
   \usepackage{parskip}
