@@ -85,27 +85,25 @@
 
 \ifx\@grado\undefined
   \def\@grado{\vspace{1cm}}
-\else
-  \newcommand\grado[1]{\def\@grado{#1}
-  \ifx\@grado\empty
-  \renewcommand\@grado{\large{Maestro en Ciencias en Bioprocesos}\\[.5cm]}
-  \else
-  \renewcommand\@grado{#1}
-  \fi
-  }
 \fi
+\newcommand\grado[1]{\def\@grado{#1}
+\ifx\@grado\empty
+  \renewcommand\@grado{\large{Maestro en Ciencias}\\[.5cm]}
+\else
+  \def\@grado{\large{#1}\\[0.5cm]}
+\fi
+}
 
 \ifx\@alumno\undefined
   \def\@alumno{\vspace{1cm}}
-\else
-  \newcommand\alumno[1]{\def\@alumno{#1}
-  \ifx\@alumno\empty
-  \renewcommand\@alumno{\large{\textbf{\large{Francisco Javier Morales Martínez}}\\[.5cm]}
-  \else
-  \renewcommand\@alumno{#1}
-  \fi
-  }
 \fi
+\newcommand\alumno[1]{\def\@alumno{#1}
+\ifx\@alumno\empty
+  \renewcommand\@alumno{\large{\textbf{\large{Nombre del Alumno}}\\[0.5cm]}}
+\else
+  \def\@alumno{\large{\textbf{\large{#1}}\\[0.5cm]}}
+\fi
+}
 
 
 \ifx\@directores\undefined
