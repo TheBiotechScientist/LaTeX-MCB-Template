@@ -108,30 +108,24 @@
 
 \ifx\@directores\undefined
   \def\@directores{\vspace{1cm}}
-\else
-  \newcommand\directores[1]{\def\@directores{#1}
-  \ifx\@directores\empty
-  \renewcommand\@directores{\textbf{\large{
-  Dr. Jorge Isaac Chairez Oria \\[0.2cm]
-  Dra. Pamela Guerra Blanco}}}
-  \else
-  \renewcommand\@directores{#1}
-  \fi
-  }
 \fi
+\newcommand\directores[1]{\def\@directores{#1}
+\ifx\@directores\empty
+  \renewcommand\@directores{\textbf{\large{Director(es) de Tesis}}\\[1.5cm]}
+\else
+  \def\@directores{\textbf{\large{#1}}\\[1.5cm]}
+\fi
+}
 
 \ifx\@fecha\undefined
   \def\@fecha{\vspace{1cm}}
-\else
-  \newcommand\fecha[1]{\def\@fecha{#1}
-  \ifx\@fecha\empty
-  \renewcommand\@fecha{\textbf{\large{Ciudad de México, Agosto de 2022}}}
-  \else
-  \renewcommand\@fecha{#1}
-  \fi
-  }
 \fi
-
-
+\newcommand\fecha[1]{\def\@fecha{#1}
+\ifx\@fecha\empty
+\renewcommand\@fecha{\textbf{\large{Ciudad de México, Agosto de 2022}}}
+\else
+  \def\@fecha{\textbf{\large{#1}}}
+\fi
+}
 
 \makeatother
