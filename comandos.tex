@@ -60,15 +60,15 @@
 
 \ifx\@seccion\undefined
   \def\@seccion{\vspace{1cm}}
-\else
-  \newcommand\seccion[1]{\def\@seccion{#1}
-  \ifx\@seccion\empty
-  \renewcommand\@seccion{\large{Sección de Estudios de Posgrado}\\[0.5cm]}
-  \else
-  \renewcommand\@seccion{#1}
-  \fi
-  }
 \fi
+\newcommand\seccion[1]{\def\@seccion{#1}
+\ifx\@seccion\empty
+  \renewcommand\@seccion{\large{Sección de Estudios de Posgrado}\\[0.5cm]}
+\else
+  \def\@seccion{#1}
+\fi
+}
+
 
 \ifx\@proyecto\undefined
   \def\@proyecto{\vspace{1cm}}
