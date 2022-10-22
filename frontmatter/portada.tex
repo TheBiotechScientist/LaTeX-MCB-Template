@@ -1,0 +1,91 @@
+% !TEX root = ..\main.tex
+\cleardoublepage
+\thispagestyle{empty}
+\begin{titlepage}
+
+  \begin{minipage}{0.25\textwidth}
+      \flushleft
+      % \center{\includegraphics[scale=0.5]{IPN}}
+      \center{
+      \makeatletter
+      {\@logosup}
+      \makeatother
+      }
+
+      \vspace{10pt}
+
+      \center{
+  		\textcolor{Sepia}{\rule{.6pt}{.7\textheight}}
+  		\hspace{0.5pt}
+  		\textcolor{Sepia}{\rule{2pt}{.7\textheight}}
+  		\hspace{0.5pt}
+  		\textcolor{Sepia}{\rule{.6pt}{.7\textheight}}
+  		}\\
+
+  	\center{
+    \makeatletter
+    {\@logoinf}
+    \makeatother
+  	}
+
+  \end{minipage}
+  \begin{minipage}{.7\textwidth}
+  	\flushright
+  	\center{
+
+  		\center{
+      \makeatletter
+        {\@universidad\par}
+      \makeatother
+  		}
+  		\textcolor{Sepia}{\hrulefill}
+  		\\[-0.3cm]
+  		\textcolor{Sepia}{\rule{\textwidth}{1.5pt}}
+  		\\[-0.3cm]
+  		\textcolor{Sepia}{\hrulefill}\\[0.3cm]
+
+      \makeatletter
+  		{\@unidad}
+
+  		% \large{\etboemru{``La técnica al servicio de la patria''}}\\[0.2cm]
+
+      {\@seccion\par}
+
+      {\@proyecto\par}
+
+      \makeatother
+
+  		\textbf{\textsc{\Huge{
+  				T \hspace{0.6cm} E \hspace{0.6cm} S \hspace{0.6cm} I \hspace{0.6cm} S  }}}
+  		\\[1cm]
+
+  		\normalsize{\textsc{\uppercase{Para Obtener El Grado De:}}}\\[0.3cm]
+
+  		\makeatletter
+      {\@grado\par}
+      \makeatother
+
+  		\large{\textsc{PRESENTA:}}\\[0.3cm]
+
+  		% Ingeniero Biotecnólogo
+      \makeatletter
+      {\@alumno\par}
+      \makeatother
+
+  		\large{DIRECTORES DE TESIS:}\\[0.3cm]
+
+      \makeatletter
+		  {\@directores\par}
+      \vspace{3cm}
+      {\@fecha}
+      \makeatother
+
+  	}
+  \end{minipage}
+
+  \thispagestyle{empty}
+  \vspace*{\fill}
+
+\end{titlepage}
+\thispagestyle{empty}
+\cleardoublepage

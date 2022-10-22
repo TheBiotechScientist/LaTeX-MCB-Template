@@ -1,0 +1,140 @@
+% !TEX root = ./main.tex
+
+\makeatletter
+% \def\@uni{}
+
+
+
+
+\ifx\@universidad\undefined
+  \def\@universidad{\textsc{\textbf{\LARGE{Instituto}}}}
+\fi
+\newcommand\universidad[1]{\def\@universidad{#1}
+\ifx\@universidad\empty
+  \renewcommand\@universidad{\textsc{\textbf{\LARGE{Instituto Politécnico Nacional}}}}
+\else
+  \def\@universidad{\textsc{\textbf{\LARGE{#1}}}}
+\fi
+}
+
+
+
+\ifx\@logosup\undefined
+  \def\@logosup{\includegraphics[scale=0.5]{IPN}}
+\fi
+\newcommand\logosup[1]{\def\@logosup{#1}
+\ifx\@logosup\empty
+  \renewcommand\@logosup{}
+\else
+  \def\@logosup{\includegraphics[scale=0.5]{#1}}
+\fi
+}
+
+\ifx\@logoinf\undefined
+  \def\@logoinf{\includegraphics[scale=0.2]{UPIBI}}
+\fi
+\newcommand\logoinf[1]{\def\@logoinf{#1}
+\ifx\@logoinf\empty
+  \renewcommand\@logoinf{}
+\else
+  \def\@logoinf{\includegraphics[scale=0.2]{#1}}
+\fi
+}
+
+\ifx\@unidad\undefined
+  \def\@unidad{\vspace{2cm}}
+\else
+  \newcommand\unidad[1]{\def\@unidad{#1}
+  \ifx\@unidad\empty
+  \renewcommand\@unidad{\large{\textbf{Unidad Profesional Interdisciplinaria de Biotecnología}}\\[0.5cm]}
+  \else
+  \renewcommand\@unidad{#1}
+  \fi
+  }
+\fi
+
+\ifx\parskip\undefined
+  \usepackage{parskip}
+\else
+\fi
+
+\ifx\@seccion\undefined
+  \def\@seccion{\vspace{1cm}}
+\else
+  \newcommand\seccion[1]{\def\@seccion{#1}
+  \ifx\@seccion\empty
+  \renewcommand\@seccion{\large{Sección de Estudios de Posgrado}\\[0.5cm]}
+  \else
+  \renewcommand\@seccion{#1}
+  \fi
+  }
+\fi
+
+\ifx\@proyecto\undefined
+  \def\@proyecto{\vspace{1cm}}
+\else
+  \newcommand\proyecto[1]{\def\@proyecto{#1}
+  \ifx\@proyecto\empty
+  \renewcommand\@proyecto{\textbf{\large{Sistema semicontinuo acoplado de ozonización-biodegradación para descomposición de mezclas de contaminantes recalcitrantes}}
+  \\[1cm]}
+  \else
+  \renewcommand\@proyecto{#1}
+  \fi
+  }
+\fi
+
+
+\ifx\@grado\undefined
+  \def\@grado{\vspace{1cm}}
+\else
+  \newcommand\grado[1]{\def\@grado{#1}
+  \ifx\@grado\empty
+  \renewcommand\@grado{\large{Maestro en Ciencias en Bioprocesos}\\[.5cm]}
+  \else
+  \renewcommand\@grado{#1}
+  \fi
+  }
+\fi
+
+\ifx\@alumno\undefined
+  \def\@alumno{\vspace{1cm}}
+\else
+  \newcommand\alumno[1]{\def\@alumno{#1}
+  \ifx\@alumno\empty
+  \renewcommand\@alumno{\large{\textbf{\large{Francisco Javier Morales Martínez}}\\[.5cm]}
+  \else
+  \renewcommand\@alumno{#1}
+  \fi
+  }
+\fi
+
+
+\ifx\@directores\undefined
+  \def\@directores{\vspace{1cm}}
+\else
+  \newcommand\directores[1]{\def\@directores{#1}
+  \ifx\@directores\empty
+  \renewcommand\@directores{\textbf{\large{
+  Dr. Jorge Isaac Chairez Oria \\[0.2cm]
+  Dra. Pamela Guerra Blanco}}}
+  \else
+  \renewcommand\@directores{#1}
+  \fi
+  }
+\fi
+
+\ifx\@fecha\undefined
+  \def\@fecha{\vspace{1cm}}
+\else
+  \newcommand\fecha[1]{\def\@fecha{#1}
+  \ifx\@fecha\empty
+  \renewcommand\@fecha{\textbf{\large{Ciudad de México, Agosto de 2022}}}
+  \else
+  \renewcommand\@fecha{#1}
+  \fi
+  }
+\fi
+
+
+
+\makeatother

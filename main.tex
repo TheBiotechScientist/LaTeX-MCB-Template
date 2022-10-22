@@ -1,0 +1,61 @@
+% Plantilla de LaTeX para Tesis
+\documentclass[11pt,twoside,openright]{book}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[oldstyle]{libertine}
+\usepackage[spanish]{babel}
+\usepackage[a4paper]{geometry}
+\geometry{top=2cm,bottom=2cm}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LE,RO]{\textit{\scriptsize\leftmark}}
+\fancyhead[LO,RE]{\textit{\scriptsize\rightmark}}
+\fancyfoot[C]{\thepage}
+
+
+\usepackage[square,numbers,sort&compress]{natbib}
+
+\input{paquetes}
+
+
+
+
+
+
+\input{comandos}
+
+
+
+\begin{document}
+
+  % === Datos de Portada ===
+  % \logosup{}
+  % \logoinf{}
+  \universidad{}
+  % \unidad{}
+  % \seccion{}
+  % \proyecto{}
+  % \grado{}
+  % \alumno{}
+  % \directores{}
+  % \fecha{}
+
+  \frontmatter
+  \include{frontmatter/portada}
+  \pagenumbering{roman}
+
+
+  \mainmatter
+  \pagenumbering{arabic}
+  \include{chapters/introduccion}
+  % \include{chapters/antecedentes}
+  % \include{chapters/metodologia}
+  % \include{chapters/resultados}
+  % \include{chapters/conclusiones}
+
+  \backmatter
+\end{document}
