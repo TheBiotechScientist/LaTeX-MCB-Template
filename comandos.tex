@@ -46,9 +46,9 @@
 \fi
 \newcommand\unidad[1]{\def\@unidad{#1}
 \ifx\@unidad\empty
-  \renewcommand\@unidad{\large{\textbf{Unidad Profesional Interdisciplinaria de Biotecnología}}\\[0.5cm]}
+  \renewcommand\@unidad{\Large{\textbf{Unidad Profesional Interdisciplinaria de Biotecnología}}\\[0.5cm]}
 \else
-  \def\@unidad{#1}
+  \def\@unidad{\Large{\textbf{#1}}\\[0.5cm]}
 \fi
 }
 
@@ -58,30 +58,29 @@
 \else
 \fi
 
+
 \ifx\@seccion\undefined
   \def\@seccion{\vspace{1cm}}
 \fi
 \newcommand\seccion[1]{\def\@seccion{#1}
 \ifx\@seccion\empty
-  \renewcommand\@seccion{\large{Sección de Estudios de Posgrado}\\[0.5cm]}
+  \renewcommand\@seccion{\Large{Sección de Estudios de Posgrado}\\[0.5cm]}
 \else
-  \def\@seccion{#1}
+  \def\@seccion{\Large{#1}\\[0.5cm]}
 \fi
 }
 
 
 \ifx\@proyecto\undefined
   \def\@proyecto{\vspace{1cm}}
-\else
-  \newcommand\proyecto[1]{\def\@proyecto{#1}
-  \ifx\@proyecto\empty
-  \renewcommand\@proyecto{\textbf{\large{Sistema semicontinuo acoplado de ozonización-biodegradación para descomposición de mezclas de contaminantes recalcitrantes}}
-  \\[1cm]}
-  \else
-  \renewcommand\@proyecto{#1}
-  \fi
-  }
 \fi
+\newcommand\proyecto[1]{\def\@proyecto{#1}
+\ifx\@proyecto\empty
+  \renewcommand\@proyecto{\textbf{\LARGE{Sistema semicontinuo acoplado de ozonización-biodegradación para descomposición de mezclas de contaminantes recalcitrantes}}\\[1cm]}
+\else
+  \def\@proyecto{\textbf{\LARGE{#1}}\\[1cm]}
+\fi
+}
 
 
 \ifx\@grado\undefined
