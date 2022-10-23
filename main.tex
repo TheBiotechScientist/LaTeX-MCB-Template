@@ -9,6 +9,7 @@
 \geometry{top=2cm,bottom=2cm}
 \usepackage{graphicx}
 \graphicspath{{figuras/}}
+% \usepackage{quotchap} % Mejora el formato de cada capítulo
 \usepackage{fancybox}
 \usepackage{fancyhdr}
 \fancyhf{}
@@ -33,30 +34,41 @@
 \begin{document}
 
   % === Datos de Portada ===
-  % \logosup{}
-  % \logoinf{}
-  \universidad{}
-  \unidad{}
-  \seccion{}
-  \proyecto{}
-  \grado{Maestro en Ciencias en Bioprocesos}
-  \alumno{Francisco Javier Morales Martínez}
-  \directores{Dr. Isaac Chairez Oria\\[0.2cm]
-  Dra. Pamela Guerra Blanco}
-  \fecha{Ciudad de México, Noviembre de 2022}
+  % Nombre de figuras sin extensión guardada en figuras/
+  % \logosup{IPN}
+  % \logoinf{UPIBI}
+  % \universidad{}
+  % \unidad{}
+  % \seccion{}
+  % \proyecto{}
+  % \grado{}
+  % \alumno{}
+  % \directores{}
+  % \fecha{}
 
+% === Portada y extras ===
+  \include{portada/portada}
+  % \include{portada/extras}
+
+% === Dedicatoria - Agradecimientos - Resumen ===
   \frontmatter
-  \include{frontmatter/portada}
   \pagenumbering{roman}
+  \include{portada/dedicatoria}
+  % \include{portada/agradecimientos}
+  % \include{portada/resumen}
 
-
+% === Capítulos ===
   \mainmatter
   \pagenumbering{arabic}
-  \include{chapters/introduccion}
-  % \include{chapters/antecedentes}
-  % \include{chapters/metodologia}
-  % \include{chapters/resultados}
-  % \include{chapters/conclusiones}
+  \include{capitulos/introduccion}
+  % \include{capitulos/antecedentes}
+  % \include{capitulos/metodologia}
+  % \include{capitulos/resultados}
+  % \include{capitulos/conclusiones}
 
+% === Bibliografía - Apendices ===
   \backmatter
+  % \bibliographystyle{TeXiS}
+  % \bibliography{biblio}
+  % \include{apendices/apendice01}
 \end{document}
