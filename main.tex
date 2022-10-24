@@ -4,28 +4,36 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[oldstyle]{libertine}
-\usepackage[spanish]{babel}
+\usepackage[spanish]{babel} % es-tabla para cambiar Cuadro -> Tabla
+% \renewcommand\spanishtablename{Tabla} % Quitando opción es-tabla
+
 \usepackage[a4paper]{geometry}
 \geometry{top=2cm,bottom=2cm,headheight=14pt}%,paperwidth=21cm,paperheight=29.7cm}
+
 \usepackage{graphicx}
 \graphicspath{{figuras/}}
-% \usepackage{quotchap} % Mejora el formato de cada capítulo
+
+\usepackage{caption}
+\captionsetup[figure]{name=\textsc{Figura}}
+\captionsetup[table]{name=\textsc{Tabla}}
+
 \usepackage{fancybox}
 \usepackage{fancyhdr}
 \fancyhf{}
 % \fancyhead[LE,RO]{\textit{\nouppercase{\scriptsize\leftmark}}}
-\fancyhead[LE,RO]{\textit{\scriptsize\leftmark}}
-\fancyhead[LO,RE]{\textit{\scriptsize\rightmark}}
+\fancyhead[LE,RO]{\textit{\scriptsize\leftmark}} % leftmark -> chapter
+\fancyhead[LO,RE]{\textit{\scriptsize\rightmark}} % rightmark -> section
 \fancyfoot[C]{\thepage}
+
+% \usepackage{quotchap} % Cambia el formato de cada capítulo
+
+\usepackage[titletoc]{appendix}
 
 \usepackage[square,numbers,sort&compress]{natbib}
 
-
 \input{paquetes}
 
-
 \usepackage[pagebackref,breaklinks,colorlinks,linktoc=all,linkcolor=blue,citecolor=purple]{hyperref}
-
 
 \input{comandos}
 
@@ -34,8 +42,7 @@
 \begin{document}
 
   % === Datos de Portada ===
-  % Nombre de figuras sin extensión guardada en figuras/
-  % \logosup{IPN}
+  % \logosup{IPN}% Nombre sin extensión guardada en figuras/
   % \logoinf{UPIBI}
   % \universidad{}
   % \unidad{}
@@ -46,22 +53,48 @@
   % \directores{}
   % \fecha{}
 
+
 % === Portada y extras ===
   \pagestyle{empty}
+  \pagenumbering{Roman}
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Portada}
   \hypersetup{pageanchor=false}
   \include{portada/portada}
-  \include{portada/sip14}
-  \include{portada/originalidad}
-  \include{portada/autorizacion}
-  \include{portada/derechos}
+  % \include{portada/sip14}
+  % \include{portada/originalidad}
+  % \include{portada/autorizacion}
+  % \include{portada/derechos}
+
 
 % === Dedicatoria - Agradecimientos - Resumen ===
   \frontmatter
   \pagenumbering{roman}
   \hypersetup{pageanchor=true}
-  % \include{portada/dedicatoria}
-  % \include{portada/agradecimientos}
-  % \include{portada/resumen}
+  \include{portada/dedicatoria}
+  \include{portada/agradecimientos}
+  \include{portada/resumen}
+
+
+% === Índice de Contenido - Figuras - Tablas ===
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Contenido}
+  \renewcommand{\contentsname}{Contenido}
+  \tableofcontents
+
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Índice de Figuras}
+  \renewcommand{\listfigurename}{Índice de Figuras}
+  \listoffigures
+
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Índice de Tablas}
+  \renewcommand{\listtablename}{Índice de Tablas}
+  \listoftables
+
 
 % === Capítulos ===
   \mainmatter
@@ -73,11 +106,19 @@
   % \include{capitulos/resultados}
   % \include{capitulos/conclusiones}
 
+
 % === Bibliografía - Apendices ===
-  \backmatter
+  % \backmatter
+  \cleardoublepage
+  \phantomsection
+  \addcontentsline{toc}{chapter}{Bibliografía}
   \bibliographystyle{TeXiS}
   \bibliography{biblio}
 
+  \renewcommand{\appendixpagename}{Apéndices}
+  \appendixpage
+  \appendix
+  \include{apendices/apendice01}
+  \include{apendices/apendice02}
 
-  % \include{apendices/apendice01}
 \end{document}
