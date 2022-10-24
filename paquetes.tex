@@ -5,4 +5,9 @@
 \usepackage{parskip}
 % Para desactivar el Warning que genera el paquete siunitx:
 \ExplSyntaxOn \msg_redirect_name:nnn { hooks } { generic-deprecated } { none } \ExplSyntaxOff
-\usepackage{siunitx}
+\usepackage{siunitx} % Para Sistema de Unidades
+\usepackage{booktabs} % Comandos \toprule, \midrule, \bottomrule
+\usepackage{makecell} % Necesario para combinar filas con macro excel2latex de Excel
+\usepackage{multirow} % Para combinar filas
+\usepackage{multicol} % Para combinar columnas
+\usepackage[version=4]{mhchem} % Formulas químicas (mejor que chemformula)
