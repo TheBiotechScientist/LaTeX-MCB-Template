@@ -3,4 +3,6 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{lipsum}
 \usepackage{parskip}
+% Para desactivar el Warning que genera el paquete siunitx:
+\ExplSyntaxOn \msg_redirect_name:nnn { hooks } { generic-deprecated } { none } \ExplSyntaxOff
 \usepackage{siunitx}
