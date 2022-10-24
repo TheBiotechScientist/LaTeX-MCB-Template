@@ -4,4 +4,7 @@
 *.bbl
 *.brf
 *.out
+*.lof
+*.lot
+*.toc
 *.synctex.gz
