@@ -6,7 +6,7 @@
 \usepackage[oldstyle]{libertine}
 \usepackage[spanish]{babel}
 \usepackage[a4paper]{geometry}
-\geometry{top=2cm,bottom=2cm}
+\geometry{top=2cm,bottom=2cm,headheight=14pt}%,paperwidth=21cm,paperheight=29.7cm}
 \usepackage{graphicx}
 \graphicspath{{figuras/}}
 % \usepackage{quotchap} % Mejora el formato de cada capítulo
@@ -47,18 +47,23 @@
   % \fecha{}
 
 % === Portada y extras ===
+  \pagestyle{empty}
   \include{portada/portada}
-  % \include{portada/extras}
+  \include{portada/sip14}
+  \include{portada/originalidad}
+  \include{portada/autorizacion}
+  \include{portada/derechos}
 
 % === Dedicatoria - Agradecimientos - Resumen ===
   \frontmatter
   \pagenumbering{roman}
-  \include{portada/dedicatoria}
+  % \include{portada/dedicatoria}
   % \include{portada/agradecimientos}
   % \include{portada/resumen}
 
 % === Capítulos ===
   \mainmatter
+  \pagestyle{fancy}
   \pagenumbering{arabic}
   \include{capitulos/introduccion}
   % \include{capitulos/antecedentes}
