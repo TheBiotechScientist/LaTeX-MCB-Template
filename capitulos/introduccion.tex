@@ -10,9 +10,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 \lipsum[2]\cite{ejemplo02}.
 
 \section{La ecuación \texorpdfstring{$E=mc$}{E=mc}}
-\lipsum[3]\citep{Dan,Baz}
+\lipsum[3]
 
 \lipsum[4] Revisar la tabla \ref{tab:apnx:uno:sec1} del Apéndice \ref{apnx:uno}
+
+\lipsum[5-6]\citep{Dan,Baz}.
 
 \section{Conversión de unidades}% \texorpdfstring{$\si{km\per h = \si{m\per s}}$}{kmh-ms}}
 \lipsum[7]
@@ -30,6 +32,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   \caption{Tabla de ejemplo.}
   \centering
   \begin{tabular}{ccc}
+
     \toprule
     \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3}\\
     \midrule
@@ -42,8 +45,91 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     Dato 1             & Dato 2             & Dato 3            \\
     Dato 1             & Dato 2             & Dato 3            \\
     \bottomrule
-    \multicolumn{3}{c}{\emph{Nota:} Esta es una nota al final de la tabla.}
+
   \end{tabular}
   \label{tab:ejemplo1}
+\end{table}
 
+\lipsum[10]
+
+\section{Tablas con notas al pie usando el paquete \texttt{threeparttable}}
+\lipsum[11]
+
+
+\begin{table}[!ht]
+  \caption{Tabla de ejemplo.}
+  \centering
+  \begin{threeparttable}
+  \begin{tabular}{ccc}
+
+    \toprule
+    \textbf{Columna 1} & \textbf{Columna 2}\tnote{a} & \textbf{Columna 3}\\
+    \midrule
+    Dato 1             & Dato 2             & Dato 3\\
+    Dato 1             & Dato 2             & Dato 3\\
+    Dato 1             & Dato 2             & Dato 3\\
+    Dato 1             & Dato 2             & Dato 3\\
+    Dato 1             & Dato 2             & Dato 3\\
+    Dato 1             & Dato 2             & Dato 3\\
+    Dato 1             & Dato 2             & Dato 3\\
+    Dato 1             & Dato 2             & Dato 3\tnote{b}\\
+    \bottomrule
+
+  \end{tabular}
+  \begin{tablenotes}
+    \item \emph{Nota:} Esta es una nota al final de la tabla usando el paquete \texttt{threeparttable} y utilizando símbolos con el paquete \verb|siunitx| como \si{\degree}$C$.
+    \item [a] Esta referencia es de la columna 2.
+    \item [b] Este dato es 3.
+  \end{tablenotes}
+  \end{threeparttable}
+  \label{tab:ejemplo4}
+  \end{table}
+
+
+\begin{table}[!ht]
+  \caption{En un lugar de La Mancha.}
+  \centering
+  \begin{tabular}{ccc}
+
+  \toprule
+  \textbf{Don Quijote} & \textbf{Columna 2} & \textbf{Columna 3}\\
+  \midrule
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  \bottomrule
+
+  \end{tabular}
+  \label{tab:quijote}
+\end{table}
+
+
+\begin{table}[!ht]
+  \caption{Don Quijote de La Mancha.}
+  \centering
+  \begin{threeparttable}
+  \begin{tabular}{ccc}
+
+  \toprule
+  \textbf{La Mancha}\tnote{a} & \textbf{Columna 2} & \textbf{Columna 3}\\
+  \midrule
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  Dato 1             & Dato 2             & Dato 3\\
+  \bottomrule
+
+  \end{tabular}
+  \begin{tablenotes}
+    \item[a] En un lugar de La Mancha.
+  \end{tablenotes}
+  \end{threeparttable}
+  \label{tab:donquijote}
 \end{table}
