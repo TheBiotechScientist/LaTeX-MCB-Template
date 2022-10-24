@@ -24,7 +24,7 @@
 \input{paquetes}
 
 
-% paquete Hyperref aquí
+\usepackage[pagebackref,breaklinks,colorlinks,linktoc=all,linkcolor=blue,citecolor=purple]{hyperref}
 
 
 \input{comandos}
@@ -48,6 +48,7 @@
 
 % === Portada y extras ===
   \pagestyle{empty}
+  \hypersetup{pageanchor=false}
   \include{portada/portada}
   \include{portada/sip14}
   \include{portada/originalidad}
@@ -57,6 +58,7 @@
 % === Dedicatoria - Agradecimientos - Resumen ===
   \frontmatter
   \pagenumbering{roman}
+  \hypersetup{pageanchor=true}
   % \include{portada/dedicatoria}
   % \include{portada/agradecimientos}
   % \include{portada/resumen}
@@ -73,7 +75,9 @@
 
 % === Bibliografía - Apendices ===
   \backmatter
-  % \bibliographystyle{TeXiS}
-  % \bibliography{biblio}
+  \bibliographystyle{TeXiS}
+  \bibliography{biblio}
+
+
   % \include{apendices/apendice01}
 \end{document}
