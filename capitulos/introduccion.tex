@@ -3,13 +3,13 @@
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\citep{ejemplo01}.
 
 
-% \begin{equation*}
-  % \si{km\per h = m\per s}
-% \end{equation*}
+\begin{equation*}
+  \si{km\per h = m\per s}
+\end{equation*}
 
 \lipsum[2]\cite{ejemplo02}.
 
-% \section{La ecuación \texorpdfstring{$E=mc$}{Emc}}
+\section{La ecuación \texorpdfstring{$E=mc$}{E=mc}}
 \lipsum[3-6]\citep{Dan,Baz}
 
 \section{Conversión de unidades}% \texorpdfstring{$\si{km\per h = \si{m\per s}}$}{kmh-ms}}
@@ -19,7 +19,29 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   \center
   \includegraphics[width=0.5\textwidth]{workinprogress}
   \caption{Figura de ejemplo.}
-  \label{fig:ejemplo}
+  \label{fig:ejemplo1}
 \end{figure}
 
 \lipsum[8-9]
+
+\begin{table}[!ht]
+  \caption{Tabla de ejemplo.}
+  \centering
+  \begin{tabular}{ccc}
+    \toprule
+    \textbf{Columna 1} & \textbf{Columna 2} & \textbf{Columna 3}\\
+    \midrule
+    Dato 1             & Dato 2             & Dato 3            \\
+    Dato 1             & Dato 2             & Dato 3            \\
+    Dato 1             & Dato 2             & Dato 3            \\
+    Dato 1             & Dato 2             & Dato 3            \\
+    Dato 1             & Dato 2             & Dato 3            \\
+    Dato 1             & Dato 2             & Dato 3            \\
+    Dato 1             & Dato 2             & Dato 3            \\
+    Dato 1             & Dato 2             & Dato 3            \\
+    \bottomrule
+    \multicolumn{3}{c}{\emph{Nota:} Esta es una nota al final de la tabla.}
+  \end{tabular}
+  \label{tab:ejemplo1}
+
+\end{table}
