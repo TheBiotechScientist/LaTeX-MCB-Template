@@ -1,14 +1,16 @@
 % Plantilla de LaTeX para Tesis
-\documentclass[11pt,twoside,openright]{book}
+\documentclass[12pt,twoside,openright]{book}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[oldstyle]{libertine}
+% \usepackage{fourier}
+\usepackage{fourier-orns} % Oranamentas
 \usepackage[spanish]{babel} % es-tabla para cambiar Cuadro -> Tabla
 % \renewcommand\spanishtablename{Tabla} % Quitando opción es-tabla
 
 \usepackage[a4paper]{geometry}
-\geometry{top=2cm,bottom=2cm,headheight=14pt}%,paperwidth=21cm,paperheight=29.7cm}
+\geometry{top=2cm,bottom=2cm,headheight=17pt}%,paperwidth=21cm,paperheight=29.7cm}
 
 \usepackage{graphicx}
 \graphicspath{{figuras/}}
@@ -16,9 +18,14 @@
 \usepackage{caption}
 \captionsetup[figure]{name=\textsc{Figura}}
 \captionsetup[table]{name=\textsc{Tabla}}
-
 \usepackage{fancybox}
+
+
 \usepackage{fancyhdr}
+\renewcommand{\headrule}{%
+\vspace{-8pt}\hrulefill
+\raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
+
 \fancyhf{}
 % \fancyhead[LE,RO]{\textit{\nouppercase{\scriptsize\leftmark}}}
 \fancyhead[LE,RO]{\textit{\scriptsize\leftmark}} % leftmark -> chapter
