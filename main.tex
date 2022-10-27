@@ -27,10 +27,23 @@
 \raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
 
 \fancyhf{}
-% \fancyhead[LE,RO]{\textit{\nouppercase{\scriptsize\leftmark}}}
-\fancyhead[LE,RO]{\textit{\scriptsize\leftmark}} % leftmark -> chapter
-\fancyhead[LO,RE]{\textit{\scriptsize\rightmark}} % rightmark -> section
-\fancyfoot[C]{\thepage}
+\fancyhead[LE,RO]{\textit{\nouppercase{\footnotesize\leftmark}}}
+% \fancyhead[LE,RO]{\textit{\scriptsize\leftmark}} % leftmark -> chapter
+\fancyhead[LO,RE]{\textit{\nouppercase{\footnotesize\rightmark}}} % rightmark -> section
+\fancyfoot[LE,RO]{\thepage}
+
+\fancypagestyle{plain}{%
+  \fancyhf{} % Clear header and footer
+  \fancyfoot[LE,RO]{\thepage}
+  \renewcommand{\headrule}{}
+  \renewcommand{\footrule}{}
+}
+
+\fancypagestyle{appendixpage}{%
+  \fancyhf{}
+  \renewcommand{\headrule}{}
+  % \renewcommand{\footrule}{}
+}
 
 % \usepackage{quotchap} % Cambia el formato de cada capítulo
 
@@ -108,7 +121,7 @@
   \pagestyle{fancy}
   \pagenumbering{arabic}
   \include{capitulos/introduccion}
-  % \include{capitulos/antecedentes}
+  \include{capitulos/antecedentes}
   % \include{capitulos/metodologia}
   % \include{capitulos/resultados}
   % \include{capitulos/conclusiones}
@@ -121,6 +134,7 @@
   \addcontentsline{toc}{chapter}{Bibliografía}
   \bibliographystyle{TeXiS}
   \bibliography{biblio}
+
 
   \renewcommand{\appendixpagename}{Apéndices}
   \appendixpage
