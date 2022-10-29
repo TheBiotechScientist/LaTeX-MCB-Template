@@ -3,7 +3,12 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[oldstyle]{libertine}
+% \usepackage[oldstyle]{libertine} % Estilo Fourier
+\usepackage[scaled]{helvet} % Similar a Arial
+\renewcommand*{\familydefault}{\sfdefault}
+% \usepackage{MnSymbol}
+% \usepackage{MinionPro}
+\usepackage{lettrine}
 % \usepackage{fourier}
 \usepackage{fourier-orns} % Oranamentas
 \usepackage[spanish]{babel} % es-tabla para cambiar Cuadro -> Tabla
@@ -18,12 +23,29 @@
 \usepackage{caption}
 \captionsetup[figure]{name=\textsc{Figura}}
 \captionsetup[table]{name=\textsc{Tabla}}
+
+\usepackage{titlesec}
+% \renewcommand{\thechapter}{\Roman{chapter}}
+
+\titleformat{\chapter}[display] % shape
+{\filleft\normalfont\sffamily\Huge} % format
+{\huge\scshape{\chaptertitlename} \ \Roman{chapter}} % Label
+{20pt} % sep
+{} % before code
+[] % aftercode
+
+\titleformat{\section}
+{\Large\itshape} % format
+{\arabic{chapter}.\arabic{section}} % label
+{1em} % sep
+{} % before code
+[] % aftercode
+
+% \usepackage{fncychap}
 \usepackage{fancybox}
-
-
 \usepackage{fancyhdr}
 \renewcommand{\headrule}{%
-\vspace{-8pt}\hrulefill
+\vspace{-8pt}\hrulefill%
 \raisebox{-2.1pt}{\quad\decofourleft\decotwo\decofourright\quad}\hrulefill}
 
 \fancyhf{}
@@ -34,16 +56,17 @@
 
 \fancypagestyle{plain}{%
   \fancyhf{} % Clear header and footer
-  \fancyfoot[LE,RO]{\thepage}
-  \renewcommand{\headrule}{}
-  \renewcommand{\footrule}{}
+  \fancyfoot[LE,RO]{\thepage}%
+  \renewcommand{\headrule}{}%
+  \renewcommand{\footrule}{}%
 }
 
-\fancypagestyle{appendixpage}{%
-  \fancyhf{}
-  \renewcommand{\headrule}{}
-  % \renewcommand{\footrule}{}
-}
+% \fancypagestyle{appendixpage}{%
+%   \fancyhf{}%
+%   \renewcommand{\headrule}{}%
+%   \fancyfoot[LE,RO]{}%
+%   % \renewcommand{\footrule}{}
+% }
 
 % \usepackage{quotchap} % Cambia el formato de cada capítulo
 
@@ -53,26 +76,33 @@
 
 \input{paquetes}
 
-\usepackage[pagebackref,breaklinks,colorlinks,linktoc=all,linkcolor=blue,citecolor=purple]{hyperref}
-
 \input{comandos}
+
+
+% === Datos de Portada ===
+% \logosup{IPN}% Nombre sin extensión guardada en figuras/
+% \logoinf{UPIBI}
+\universidad{}
+\unidad{}
+\seccion{}
+\titulotesis{}
+\grado{}
+\alumno{}
+\directores{}
+\fecha{}
+
+\usepackage[pagebackref,breaklinks,colorlinks,linktoc=all,linkcolor=blue,citecolor=purple]{hyperref}
+\makeatletter
+\hypersetup{%
+pdfauthor={\@alumno},%
+pdfsubject={Subject}%
+}
+\makeatother
+
 
 
 
 \begin{document}
-
-  % === Datos de Portada ===
-  % \logosup{IPN}% Nombre sin extensión guardada en figuras/
-  % \logoinf{UPIBI}
-  % \universidad{}
-  % \unidad{}
-  % \seccion{}
-  % \proyecto{}
-  % \grado{}
-  % \alumno{}
-  % \directores{}
-  % \fecha{}
-
 
 % === Portada y extras ===
   \pagestyle{empty}
@@ -97,6 +127,12 @@
 
 
 % === Índice de Contenido - Figuras - Tablas ===
+  \titleformat{\chapter}[display] % shape
+  {\filleft\sffamily\scshape\Huge} % format
+  {} % Label
+  {20pt} % sep
+  {} % before code
+  [] % aftercode
   \cleardoublepage
   \phantomsection
   \addcontentsline{toc}{chapter}{Contenido}
@@ -118,6 +154,12 @@
 
 % === Capítulos ===
   \mainmatter
+  \titleformat{\chapter}[display] % shape
+  {\filleft\normalfont\sffamily\Huge} % format
+  {\huge\scshape{\chaptertitlename} \ \Roman{chapter}} % Label
+  {20pt} % sep
+  {} % before code
+  [] % aftercode
   \pagestyle{fancy}
   \pagenumbering{arabic}
   \include{capitulos/introduccion}
@@ -132,13 +174,45 @@
   \cleardoublepage
   \phantomsection
   \addcontentsline{toc}{chapter}{Bibliografía}
+  \titleformat{\chapter}
+  {\filleft\normalfont\sffamily\scshape\Huge} % format
+  {} % label
+  {} % sep
+  {} % before code
+  [] % after code
   \bibliographystyle{TeXiS}
   \bibliography{biblio}
 
+  \titleformat{\chapter}[display]
+  {\filleft\normalfont\sffamily\Huge} % format
+  {\Huge\scshape{\appendixname} \ \Alph{chapter}} % label
+  {20pt} % sep
+  {} % before code
+  [] % after code
 
-  \renewcommand{\appendixpagename}{Apéndices}
+  \titleformat{\section}
+  {\Large\itshape} % format
+  {\Alph{chapter}.\arabic{section}} % label
+  {1em} % sep
+  {} % before code
+  [] % aftercode
+
+  \renewcommand*{\appendixpagename}{\normalfont\sffamily\scshape Apéndices}
+  \fancypagestyle{plain}{%
+    \fancyhf{} % Clear header and footer
+    % \fancyfoot[LE,RO]{}%
+    \renewcommand{\headrule}{}%
+    \renewcommand{\footrule}{}%
+  }
   \appendixpage
+
   \appendix
+  \fancypagestyle{plain}{%
+    \fancyhf{} % Clear header and footer
+    \fancyfoot[LE,RO]{\thepage}%
+    \renewcommand{\headrule}{}%
+    \renewcommand{\footrule}{}%
+  }
   \include{apendices/apendice01}
   \include{apendices/apendice02}
 
