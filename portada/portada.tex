@@ -9,23 +9,24 @@
       % \center{\includegraphics[scale=0.5]{IPN}}
       \center{
       \makeatletter
-      {\@logosup}
+      {\includegraphics[scale=0.5]{\@logosup}}
       \makeatother
       }
 
-      \vspace{10pt}
+      \vspace{1em}
 
       \center{
   		\textcolor{Sepia}{\rule{.6pt}{.7\textheight}}
-  		\hspace{0.5pt}
+  		\hspace{-1pt}
   		\textcolor{Sepia}{\rule{2pt}{.7\textheight}}
-  		\hspace{0.5pt}
+  		\hspace{-1pt}
   		\textcolor{Sepia}{\rule{.6pt}{.7\textheight}}
-  		}\\
+  		}
+      \vspace{1em}
 
   	\center{
     \makeatletter
-    {\@logoinf}
+    {\includegraphics[scale=0.2]{\@logoinf}}
     \makeatother
   	}
 
@@ -36,49 +37,66 @@
 
   		\center{
       \makeatletter
-        {\@universidad\par}
+      \@ifpackageloaded{helvet}{\Large\textsc{\textbf{\@universidad}}}{}
+      \@ifpackageloaded{libertine}{\Large\textsc{\textbf{\sffamily\@universidad}}}{}
+      \par
       \makeatother
   		}
-  		\textcolor{Sepia}{\hrulefill}
-  		\\[-0.3cm]
-  		\textcolor{Sepia}{\rule{\textwidth}{1.5pt}}
-  		\\[-0.3cm]
-  		\textcolor{Sepia}{\hrulefill}\\[0.3cm]
+
+  		\textcolor{Sepia}{\hrulefill}\par
+  		\vspace{-8pt}
+  		\textcolor{Sepia}{\rule{\textwidth}{1.5pt}}\par
+  		\vspace{-8pt}
+  		\textcolor{Sepia}{\hrulefill}\par
+
+      \vspace{1em}
 
       \makeatletter
-  		{\@unidad}
+  		\@ifpackageloaded{helvet}{\Large\textbf{\@unidad}}{}
+      \@ifpackageloaded{libertine}{\Large\textbf{\sffamily\@unidad}}{}\par
+      \vspace{0.8cm}
 
   		% \large{\etboemru{``La técnica al servicio de la patria''}}\\[0.2cm]
 
-      {\@seccion\par}
+      {\Large\@seccion}\par
+      \vspace{0.8cm}
 
-      {\@proyecto\par}
-
+      \@ifpackageloaded{helvet}{\Large\textbf{\@titulotesis}}{}
+      \@ifpackageloaded{libertine}{\Large\textbf{\sffamily\@titulotesis}}{}\par
       \makeatother
+      \vspace{1cm}
 
-  		\textbf{\textsc{\Huge{
-  				T \hspace{0.6cm} E \hspace{0.6cm} S \hspace{0.6cm} I \hspace{0.6cm} S  }}}
-  		\\[1cm]
+  		{\Huge\textbf{\textsc{
+  				T \hspace{0.6cm} E \hspace{0.6cm} S \hspace{0.6cm} I \hspace{0.6cm} S  }}}\par
+  		\vspace{1cm}
 
-  		\normalsize{\textsc{\uppercase{Para Obtener El Grado De:}}}\\[0.3cm]
+  		{\large\textsc{PARA OBTENER EL GRADO DE:}}\par
+      \vspace{0.5cm}
 
   		\makeatletter
-      {\@grado\par}
+      {\Large{\@grado}}\par
       \makeatother
+      \vspace{0.5cm}
 
-  		\large{\textsc{PRESENTA:}}\\[0.3cm]
+  		{\large\textsc{PRESENTA:}}\par
+      \vspace{0.3cm}
 
   		% Ingeniero Biotecnólogo
       \makeatletter
-      {\@alumno\par}
+      \@ifpackageloaded{helvet}{\large\textbf{\@alumno}}{}
+      \@ifpackageloaded{libertine}{\large\textbf{\sffamily\@alumno}}{}\par
       \makeatother
+      \vspace{0.5cm}
 
-  		\large{DIRECTORES DE TESIS:}\\[0.3cm]
+  		{\large\textsc{DIRECTORES DE TESIS:}}\par
+      \vspace{0.3cm}
 
       \makeatletter
-		  {\@directores\par}
+		  \@ifpackageloaded{helvet}{\large\textbf{\@directores}}{}
+      \@ifpackageloaded{libertine}{\large\textbf{\sffamily\@directores}}{}\par
+      \vspace{1.5cm}
       \vfill
-      {\@fecha}
+      {\large\textbf{\@fecha}}
       \makeatother
 
   	}

@@ -3,124 +3,119 @@
 \makeatletter
 
 \ifx\@universidad\undefined
-  \def\@universidad{\textsc{\textbf{\LARGE{Instituto}}}}
+  \def\@universidad{Instituto}
 \fi
 \newcommand\universidad[1]{\def\@universidad{#1}
 \ifx\@universidad\empty
-  \renewcommand\@universidad{\textsc{\textbf{\LARGE{Instituto Politécnico Nacional}}}}
+  \renewcommand\@universidad{Instituto Politécnico Nacional}
 \else
-  \def\@universidad{\textsc{\textbf{\LARGE{#1}}}}
+  \def\@universidad{#1}
 \fi
 }
 
 
-
 \ifx\@logosup\undefined
-  \def\@logosup{\includegraphics[scale=0.5]{IPN}}
+  \def\@logosup{IPN}
 \fi
 \newcommand\logosup[1]{\def\@logosup{#1}
 \ifx\@logosup\empty
   \renewcommand\@logosup{}
 \else
-  \def\@logosup{\includegraphics[scale=0.5]{#1}}
+  \def\@logosup{#1}
 \fi
 }
 
+
 \ifx\@logoinf\undefined
-  \def\@logoinf{\includegraphics[scale=0.2]{UPIBI}}
+  \def\@logoinf{UPIBI}
 \fi
 \newcommand\logoinf[1]{\def\@logoinf{#1}
 \ifx\@logoinf\empty
   \renewcommand\@logoinf{}
 \else
-  \def\@logoinf{\includegraphics[scale=0.2]{#1}}
+  \def\@logoinf{#1}
 \fi
 }
 
+
 \ifx\@unidad\undefined
-  \def\@unidad{\vspace{2cm}}
+  \def\@unidad{}
 \fi
 \newcommand\unidad[1]{\def\@unidad{#1}
 \ifx\@unidad\empty
-  \renewcommand\@unidad{\Large{\textbf{Unidad Profesional Interdisciplinaria de Biotecnología}}\\[0.5cm]}
+  \renewcommand\@unidad{Unidad Profesional Interdisciplinaria de Biotecnología}
 \else
-  \def\@unidad{\Large{\textbf{#1}}\\[0.5cm]}
+  \def\@unidad{#1}
 \fi
 }
-
-
-\ifx\parskip\undefined
-  \usepackage{parskip}
-\else
-\fi
 
 
 \ifx\@seccion\undefined
-  \def\@seccion{\vspace{1cm}}
+  \def\@seccion{}
 \fi
 \newcommand\seccion[1]{\def\@seccion{#1}
 \ifx\@seccion\empty
-  \renewcommand\@seccion{\Large{Sección de Estudios de Posgrado}\\[0.5cm]}
+  \renewcommand\@seccion{Sección de Estudios de Posgrado}
 \else
-  \def\@seccion{\Large{#1}\\[0.5cm]}
+  \def\@seccion{#1}
 \fi
 }
 
 
-\ifx\@proyecto\undefined
-  \def\@proyecto{\vspace{1cm}}
+\ifx\@titulotesis\undefined
+  \def\@titulotesis{Titulo de Tesis}
 \fi
-\newcommand\proyecto[1]{\def\@proyecto{#1}
-\ifx\@proyecto\empty
-  \renewcommand\@proyecto{\textbf{\LARGE{Sistema semicontinuo acoplado de ozonización-biodegradación para descomposición de mezclas de contaminantes recalcitrantes}}\\[1cm]}
+\newcommand\titulotesis[1]{\def\@titulotesis{#1}
+\ifx\@titulotesis\empty
+  \renewcommand\@titulotesis{Sistema semicontinuo acoplado de ozonización-biodegradación para descomposición de mezclas de contaminantes recalcitrantes}
 \else
-  \def\@proyecto{\textbf{\LARGE{#1}}\\[1cm]}
+  \def\@titulotesis{#1}
 \fi
 }
 
 
 \ifx\@grado\undefined
-  \def\@grado{\vspace{1cm}}
+  \def\@grado{}
 \fi
 \newcommand\grado[1]{\def\@grado{#1}
 \ifx\@grado\empty
-  \renewcommand\@grado{\large{Maestro en Ciencias}\\[.5cm]}
+  \renewcommand\@grado{Maestro en Ciencias}
 \else
-  \def\@grado{\large{#1}\\[0.5cm]}
+  \def\@grado{#1}
 \fi
 }
 
 \ifx\@alumno\undefined
-  \def\@alumno{\vspace{1cm}}
+  \def\@alumno{}
 \fi
 \newcommand\alumno[1]{\def\@alumno{#1}
 \ifx\@alumno\empty
-  \renewcommand\@alumno{\large{\textbf{\large{Nombre del Alumno}}\\[0.5cm]}}
+  \renewcommand\@alumno{Nombre del Alumno}
 \else
-  \def\@alumno{\large{\textbf{\large{#1}}\\[0.5cm]}}
+  \def\@alumno{#1}
 \fi
 }
 
 
 \ifx\@directores\undefined
-  \def\@directores{\vspace{1cm}}
+  \def\@directores{}
 \fi
 \newcommand\directores[1]{\def\@directores{#1}
 \ifx\@directores\empty
-  \renewcommand\@directores{\textbf{\large{Director(es) de Tesis}}\\[1.5cm]}
+  \renewcommand\@directores{Director(es) de Tesis}
 \else
-  \def\@directores{\textbf{\large{#1}}\\[1.5cm]}
+  \def\@directores{#1}
 \fi
 }
 
 \ifx\@fecha\undefined
-  \def\@fecha{\textbf{\large{Lugar, Mes y Año}}}
+  \def\@fecha{Lugar, Mes y Año}
 \fi
 \newcommand\fecha[1]{\def\@fecha{#1}
 \ifx\@fecha\empty
-\renewcommand\@fecha{\textbf{\large{Ciudad de México, Agosto de 2022}}}
+\renewcommand\@fecha{Ciudad de México, Agosto de 2022}
 \else
-  \def\@fecha{\textbf{\large{#1}}}
+  \def\@fecha{#1}
 \fi
 }
 
