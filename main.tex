@@ -91,12 +91,17 @@
 \directores{}
 \fecha{}
 
-\usepackage[pagebackref,breaklinks,colorlinks,linktoc=all,linkcolor=blue,citecolor=purple]{hyperref}
+\usepackage[pagebackref,breaklinks,colorlinks,linktoc=all,linkcolor=blue,citecolor=purple,unicode]{hyperref}
 \makeatletter
 \hypersetup{%
 pdfauthor={\@alumno},%
 pdfsubject={Subject}%
 }
+
+% \pdfstringdefDisableCommands{%
+%   \def\texttt#1{<#1>}%
+%   \def\verb||%
+% }
 \makeatother
 
 
