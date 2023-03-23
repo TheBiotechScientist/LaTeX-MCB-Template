@@ -119,4 +119,32 @@
 \fi
 }
 
+\newcommand*{\lineimg}[4]{%
+  \raisebox{#1\baselineskip}{%
+    \includegraphics[
+      height=#2,
+      width=#3,
+      keepaspectratio,
+    ]{#4}%
+  }%
+}% \lineimg{ratio}{height}{width}{file}
+
+
+\let\latexthesection\thesection
+
+\renewcommand{\latexthesection}{\arabic{section}}
+
+\newcommand\chapwordcount{%
+    \immediate\write18{texcount \currfilepath | grep "Chapter" | sed -e 's/+.*//' | sed -n '\thechapter'p > count.txt}
+(\input{count.txt}palabras)}%
+
+\newcommand\secwordcount{%
+    \immediate\write18{texcount \currfilepath | grep "Section" | sed -e 's/+.*//' | sed -n '\latexthesection'p > count.txt}
+(\input{count.txt}palabras)}%
+
+% comandos para paquete setspace:
+\onehalfspacing
+% \doublespacing
+% \singlespacing
+
 \makeatother
